@@ -40,10 +40,13 @@ public class Investidor {
     }
 
     public void creditarBonus(BigDecimal valor) {
-        this.bonus = this.bonus.add(valor);
+    if (valor == null) return;
+    this.bonus = this.bonus.add(valor);
     }
 
     public void debitarBonus(BigDecimal valor) {
-        this.bonus = this.bonus.subtract(valor);
+    if (valor == null) return;
+    this.bonus = this.bonus.subtract(valor);
     }
+
 }
