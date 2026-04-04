@@ -1,7 +1,7 @@
 package br.edu.cs.poo.ac.bolsa.negocio;
 
 import br.edu.cs.poo.ac.bolsa.dao.DAOAtivo;
-import br.edu.cs.poo.ac.bolsa.entidade.Ativo;
+import br.edu.cs.poo.ac.bolsa.entidades.Ativo;
 import br.edu.cs.poo.ac.bolsa.util.MensagensValidacao;
 
 public class AtivoMediator {
@@ -34,7 +34,7 @@ public class AtivoMediator {
 
         if (ativo.getValorMinimoAplicacao() <= 0)
             msgs.adicionar("Valor mínimo de aplicação deve ser maior que zero.");
-        
+
         if (ativo.getValorMaximoAplicacao() <= 0)
             msgs.adicionar("Valor máximo de aplicação deve ser maior que zero.");
 
