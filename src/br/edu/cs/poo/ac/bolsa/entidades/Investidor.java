@@ -1,15 +1,18 @@
 package br.edu.cs.poo.ac.bolsa.entidades;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Investidor {
+public class Investidor implements Serializable {
     private String nome;
     private Endereco endereco;
     private LocalDate dataCriacao;
-    private BigDecimal bonus;
+    private BigDecimal bonus = BigDecimal.ZERO;
     private Contatos contatos;
+
+    public Investidor() {}
 
     public Investidor(String nome, Endereco endereco, LocalDate dataCriacao,
                       BigDecimal bonus, Contatos contatos) {
@@ -22,31 +25,23 @@ public class Investidor {
 
     public String getNome() { return nome; }
     public void setNome(String nome) { this.nome = nome; }
-
     public Endereco getEndereco() { return endereco; }
     public void setEndereco(Endereco endereco) { this.endereco = endereco; }
-
     public Contatos getContatos() { return contatos; }
     public void setContatos(Contatos contatos) { this.contatos = contatos; }
-
     public BigDecimal getBonus() { return bonus; }
-
     protected LocalDate getDataCriacao() { return dataCriacao; }
     protected void setDataCriacao(LocalDate dataCriacao) { this.dataCriacao = dataCriacao; }
-
     public int getIdade() {
         if (dataCriacao == null) return 0;
         return Period.between(dataCriacao, LocalDate.now()).getYears();
     }
-
     public void creditarBonus(BigDecimal valor) {
-    if (valor == null) return;
-    this.bonus = this.bonus.add(valor);
+        if (valor == null) return;
+        this.bonus = this.bonus.add(valor);
     }
-
     public void debitarBonus(BigDecimal valor) {
-    if (valor == null) return;
-    this.bonus = this.bonus.subtract(valor);
+        if (valor == null) return;
+        this.bonus = this.bonus.subtract(valor);
     }
-
 }
