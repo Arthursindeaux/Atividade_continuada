@@ -19,5 +19,6 @@ The `JAVA PROJECTS` view allows you to manage your dependencies. More details ca
 
 
 <details>
-aufbunfoamf
+<summary>ENTREGA 3</summary>
+  AQUI FICARIA O CONTEUDO
 </details>
